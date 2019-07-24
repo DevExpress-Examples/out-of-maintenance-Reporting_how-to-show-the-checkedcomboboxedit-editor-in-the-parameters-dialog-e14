@@ -5,11 +5,11 @@
 * [XtraReport1.cs](./CS/WindowsApplication1/XtraReport1.cs) (VB: [XtraReport1.vb](./VB/WindowsApplication1/XtraReport1.vb))
 * [XtraReport1.Designer.cs](./CS/WindowsApplication1/XtraReport1.Designer.cs)
 <!-- default file list end -->
-# How to show the CheckedComboBoxEdit editor in the Parameters dialog
+# Print Preview - How to use a custom multi-selection editor in the Parameters dialog
 
-
-<p>This example demonstrates how to embed a <a href="https://documentation.devexpress.com/#WindowsForms/clsDevExpressXtraEditorsCheckedComboBoxEdittopic">CheckedComboBoxEdit</a> control to the Parameters panel in a  <a href="https://documentation.devexpress.com/XtraReports/CustomDocument10707.aspx">Print Prevew</a> for parameters editing.<br />The main idea is to handle the <a href="https://documentation.devexpress.com/#XtraReports/DevExpressXtraReportsUIXtraReport_ParametersRequestBeforeShowtopic">XtraReport.ParametersRequestBeforeShow</a> event and assign a required editor to the <a href="https://documentation.devexpress.com/CoreLibraries/DevExpressXtraReportsParametersParameterInfo_Editortopic.aspx">DevExpress.XtraReports.Parameters.ParameterInfo.Editor</a> property.<br /><br />See also:<br /><a href="https://documentation.devexpress.com/#XtraReports/CustomDocument10000">Provide a User Interface for Requesting Parameter Values</a></p>
-
+<p>Report parameters support the multi-value functionality out of the box. Enable the <a href="https://docs.devexpress.com/CoreLibraries/DevExpress.DocumentServices.ServiceModel.DataContracts.ReportParameter.MultiValue">MultiValue</a> property so that a parameter can store a list of values instead of a single value. The default editor for this type of parameters is a multi-select drop-down list. See <a href="https://docs.devexpress.com/XtraReports/9998/Detailed-Guide-to-DevExpress-Reporting/Shape-Report-Data/Use-Report-Parameters/Create-Multi-Value-and-Cascading-Report-Parameters">Create Multi-Value and Cascading Report Parameters</a> for more information.</p>
+<p>This example demonstrates how to use a custom <a href="https://docs.devexpress.com/WindowsForms/DevExpress.XtraEditors.CheckedComboBoxEdit">CheckedComboBoxEdit</a> to display a multi-value drop-down list for a report parameter in the <a href="https://docs.devexpress.com/XtraReports/10707/Create-End-User-Reporting-Applications/WinForms-Reporting/Print-Preview">print preview</a> Parameters panel. <br />
+The main idea is to handle the <a href="https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ParametersRequestBeforeShow">XtraReport.ParametersRequestBeforeShow</a> event and assign a required editor to the <a href="https://docs.devexpress.com/CoreLibraries/DevExpress.XtraReports.Parameters.ParameterInfo.Editor">DevExpress.XtraReports.Parameters.ParameterInfo.Editor</a> property.<br /><br />
 <br/>
 
 

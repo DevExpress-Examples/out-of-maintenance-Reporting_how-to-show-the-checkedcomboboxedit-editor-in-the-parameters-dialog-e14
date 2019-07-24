@@ -1,4 +1,6 @@
+using DevExpress.DataAccess.Sql.DataApi;
 using System;
+using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
 namespace WindowsApplication1 {
@@ -8,14 +10,19 @@ namespace WindowsApplication1 {
         }
 
         private void XtraReport1_ParametersRequestBeforeShow(object sender,DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e) {
-            CheckedComboBoxEdit cbc = new CheckedComboBoxEdit();
-            e.ParametersInformation[0].Editor = cbc;
-            categoriesTableAdapter.Fill(nwindDataSet1.Categories);
-            for (int i = 0; i < nwindDataSet1.Categories.Count; i++)
-                cbc.Properties.Items.Add(nwindDataSet1.Categories[i].CategoryID, nwindDataSet1.Categories[i].CategoryName,System.Windows.Forms.CheckState.Unchecked,true);
-            //nwindDataSet1.Categories
-            //cbc.Items.Add(
-            //e.ParametersInformation[0].Editor 
+            BaseEdit customEditor = InitCustomEditor();            
+            e.ParametersInformation[0].Editor = customEditor;
+        }
+
+        private BaseEdit InitCustomEditor() {
+            CheckedComboBoxEdit editor = new CheckedComboBoxEdit();            
+            parameterDataSource.Fill();
+            IResultSet result = parameterDataSource.Result;
+            ITable categoriesTable = result["Categories"];
+            foreach(IRow item in categoriesTable) {
+                    editor.Properties.Items.Add(item["CategoryID"], item["CategoryName"].ToString(), CheckState.Unchecked, true);
+            }
+            return editor;
         }
 
         private void XtraReport1_ParametersRequestSubmit(object sender,DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e) {
