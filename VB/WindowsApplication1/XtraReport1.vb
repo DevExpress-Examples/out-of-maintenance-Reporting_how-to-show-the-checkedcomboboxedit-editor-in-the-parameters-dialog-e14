@@ -1,15 +1,15 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports DevExpress.XtraEditors
 
 Namespace WindowsApplication1
 	Partial Public Class XtraReport1
 		Inherits DevExpress.XtraReports.UI.XtraReport
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub
 
-		Private Sub XtraReport1_ParametersRequestBeforeShow(ByVal sender As Object, ByVal e As DevExpress.XtraReports.Parameters.ParametersRequestEventArgs) Handles MyBase.ParametersRequestBeforeShow
+		Private Sub XtraReport1_ParametersRequestBeforeShow(ByVal sender As Object, ByVal e As DevExpress.XtraReports.Parameters.ParametersRequestEventArgs) Handles Me.ParametersRequestBeforeShow
 			Dim cbc As New CheckedComboBoxEdit()
 			e.ParametersInformation(0).Editor = cbc
 			categoriesTableAdapter.Fill(nwindDataSet1.Categories)
@@ -21,8 +21,8 @@ Namespace WindowsApplication1
 			'e.ParametersInformation[0].Editor 
 		End Sub
 
-		Private Sub XtraReport1_ParametersRequestSubmit(ByVal sender As Object, ByVal e As DevExpress.XtraReports.Parameters.ParametersRequestEventArgs) Handles MyBase.ParametersRequestSubmit
-            Me.FilterString = "[CategoryID] In (" & e.ParametersInformation(0).Parameter.Value.ToString() & ")"
+		Private Sub XtraReport1_ParametersRequestSubmit(ByVal sender As Object, ByVal e As DevExpress.XtraReports.Parameters.ParametersRequestEventArgs) Handles Me.ParametersRequestSubmit
+			Me.FilterString = "[CategoryID] In (" & e.ParametersInformation(0).Parameter.Value & ")"
 		End Sub
 
 	End Class
