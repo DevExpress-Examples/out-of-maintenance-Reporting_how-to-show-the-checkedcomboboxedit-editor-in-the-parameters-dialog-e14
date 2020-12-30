@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace WindowsApplication1
+﻿Namespace WindowsApplication1
 	Partial Public Class XtraReport1
 		''' <summary>
 		''' Required designer variable.
@@ -33,9 +31,9 @@ Namespace WindowsApplication1
 			Me.xrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
 			Me.xrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
 			Me.parameter1 = New DevExpress.XtraReports.Parameters.Parameter()
-            Me.nwindDataSet1 = New nwindDataSet()
-            Me.categoriesTableAdapter = New nwindDataSetTableAdapters.CategoriesTableAdapter()
-            Me.productsTableAdapter = New nwindDataSetTableAdapters.ProductsTableAdapter()
+			Me.nwindDataSet1 = New WindowsApplication1.nwindDataSet()
+			Me.categoriesTableAdapter = New WindowsApplication1.nwindDataSetTableAdapters.CategoriesTableAdapter()
+			Me.productsTableAdapter = New WindowsApplication1.nwindDataSetTableAdapters.ProductsTableAdapter()
 			Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
 			Me.xrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
 			CType(Me.xrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,8 +136,10 @@ Namespace WindowsApplication1
 			Me.PageWidth = 850
 			Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() { Me.parameter1})
 			Me.Version = "9.1"
-'			Me.ParametersRequestSubmit += New System.EventHandler(Of DevExpress.XtraReports.Parameters.ParametersRequestEventArgs)(Me.XtraReport1_ParametersRequestSubmit);
-'			Me.ParametersRequestBeforeShow += New System.EventHandler(Of DevExpress.XtraReports.Parameters.ParametersRequestEventArgs)(Me.XtraReport1_ParametersRequestBeforeShow);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.ParametersRequestSubmit += new System.EventHandler<DevExpress.XtraReports.Parameters.ParametersRequestEventArgs>(this.XtraReport1_ParametersRequestSubmit);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.ParametersRequestBeforeShow += new System.EventHandler<DevExpress.XtraReports.Parameters.ParametersRequestEventArgs>(this.XtraReport1_ParametersRequestBeforeShow);
 			CType(Me.xrTable1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.nwindDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
@@ -151,14 +151,14 @@ Namespace WindowsApplication1
 		Private Detail As DevExpress.XtraReports.UI.DetailBand
 		Private parameter1 As DevExpress.XtraReports.Parameters.Parameter
 		Private nwindDataSet1 As nwindDataSet
-        Private categoriesTableAdapter As nwindDataSetTableAdapters.CategoriesTableAdapter
+		Private categoriesTableAdapter As WindowsApplication1.nwindDataSetTableAdapters.CategoriesTableAdapter
 		Private xrTable1 As DevExpress.XtraReports.UI.XRTable
 		Private xrTableRow1 As DevExpress.XtraReports.UI.XRTableRow
 		Private xrTableCell3 As DevExpress.XtraReports.UI.XRTableCell
 		Private xrTableCell4 As DevExpress.XtraReports.UI.XRTableCell
 		Private xrTableCell5 As DevExpress.XtraReports.UI.XRTableCell
 		Private xrTableCell6 As DevExpress.XtraReports.UI.XRTableCell
-        Private productsTableAdapter As nwindDataSetTableAdapters.ProductsTableAdapter
+		Private productsTableAdapter As WindowsApplication1.nwindDataSetTableAdapters.ProductsTableAdapter
 		Private GroupHeader1 As DevExpress.XtraReports.UI.GroupHeaderBand
 		Private xrLabel1 As DevExpress.XtraReports.UI.XRLabel
 	End Class
